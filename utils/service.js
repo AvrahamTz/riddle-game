@@ -1,5 +1,6 @@
 import readline from "readline-sync";
-export function askRiddle(riddleObj){
+ 
+function askRiddle(riddleObj){
     console.log(`${riddleObj.name} ${riddleObj.taskDescription}`)
     
     if ("choices" in riddleObj){
@@ -18,10 +19,10 @@ export function askRiddle(riddleObj){
         askRiddle(riddleObj)
     }}
 
-export function measureSolveTime(func){
+export function measureSolveTime(func,r1){
 
     const start =  Date.now()
-    func()
+    func(r1)
     const end =  Date.now()
     return (end - start)%100
 }
